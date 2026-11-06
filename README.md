@@ -75,6 +75,25 @@ npm run gerar:planilha
 
 Isso recria o `planilha-modelo-cogestao.xlsx` a partir de `scripts/gerar-planilha-modelo.mjs`.
 
+### Versao bonita (tons de mar) via Apps Script
+
+Se voce prefere uma planilha ja **formatada e bonita** em vez de importar o `.xlsx`, use o
+script [`scripts/planilha-sheets.gs`](./scripts/planilha-sheets.gs). Ele monta as mesmas sete abas,
+com os mesmos cabecalhos e dados de exemplo, mas aplica um tema visual em **tons de mar** (cabecalho
+azul profundo com texto branco, linhas alternadas em aqua claro, bordas suaves e cores de status
+nas Demandas e de nivel na Visao Geral).
+
+Como usar: abra (ou crie) uma planilha no Google Sheets, va em **Extensoes > Apps Script**, apague
+o conteudo do editor, cole todo o arquivo `scripts/planilha-sheets.gs`, salve, selecione a funcao
+`gerarPlanilhaCogestao` na barra do topo e clique em **Executar** (autorize quando o Google pedir; o
+script so mexe nesta planilha). Pronto. E seguro rodar de novo quando quiser (idempotente): cada aba
+e recriada do zero, sem duplicar linhas.
+
+Como a planilha resultante tem exatamente as mesmas abas e cabecalhos, ela se conecta ao painel do
+mesmo jeito: compartilhe como "qualquer pessoa com o link" (Leitor) e informe o ID em `VITE_SHEET_ID`,
+seguindo o passo a passo da secao
+[Conectando uma planilha do Google Sheets](#conectando-uma-planilha-do-google-sheets-opcional) abaixo.
+
 ## Conectando uma planilha do Google Sheets (opcional)
 
 Quando quiser usar seus dados reais, conecte uma planilha do Google Sheets. O painel le a planilha
