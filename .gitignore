@@ -1,0 +1,15 @@
+# Dependencias
+node_modules
+
+# Build de producao
+dist
+
+# Variaveis de ambiente locais (o .env.example permanece versionado)
+.env
+.env.local
+.env.*.local
+
+# Logs e cache
+*.log
+.vite
+*.tsbuildinfo
