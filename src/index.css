@@ -269,6 +269,12 @@ button {
   padding: 1rem 0;
 }
 
+.carregando {
+  color: var(--cor-texto-suave);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
 /* ===== Contadores (Visao Geral) ===== */
 .contadores {
   display: grid;
