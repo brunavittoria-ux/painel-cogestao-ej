@@ -47,6 +47,34 @@ Se a variavel nao for definida, o painel usa a frase-senha padrao `presidencia20
 > (login real com servidor, controle de permissoes e armazenamento protegido). Trate este painel
 > como um organizador de conveniencia, nao como um cofre de senhas.
 
+## Planilha modelo pronta para importar
+
+Para facilitar, o projeto ja vem com uma **planilha modelo pronta**: o arquivo
+[`planilha-modelo-cogestao.xlsx`](./planilha-modelo-cogestao.xlsx) na raiz do repositorio. Ele ja
+tem as **sete abas** com os nomes e os cabecalhos exatos que o painel espera e vem preenchido com os
+mesmos dados de exemplo do painel, para voce so trocar pelo conteudo real.
+
+Como usar:
+
+1. **Baixe** o arquivo `planilha-modelo-cogestao.xlsx` (pelo GitHub, botao "Download", ou do seu
+   clone local).
+2. No Google Sheets, va em **Arquivo > Importar** e envie o arquivo. Escolha a opcao de importar
+   como uma nova planilha (as sete abas ja vem prontas).
+3. **Edite os dados** de cada aba com o conteudo real da sua EJ, mantendo a primeira linha (os
+   cabecalhos) exatamente como esta.
+4. **Compartilhe** a planilha como "Qualquer pessoa com o link" com permissao de **Leitor** e
+   **conecte** ao painel pela variavel `VITE_SHEET_ID`, seguindo o passo a passo da secao
+   [Conectando uma planilha do Google Sheets](#conectando-uma-planilha-do-google-sheets-opcional)
+   abaixo.
+
+Precisa gerar o arquivo de novo (por exemplo, apos editar o script)? Rode:
+
+```bash
+npm run gerar:planilha
+```
+
+Isso recria o `planilha-modelo-cogestao.xlsx` a partir de `scripts/gerar-planilha-modelo.mjs`.
+
 ## Conectando uma planilha do Google Sheets (opcional)
 
 Quando quiser usar seus dados reais, conecte uma planilha do Google Sheets. O painel le a planilha
