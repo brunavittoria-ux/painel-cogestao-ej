@@ -1,0 +1,561 @@
+/* Estilos globais do painel de cogestao da presidencia da Empresa Junior. */
+
+:root {
+  --cor-fundo: #f4f6fb;
+  --cor-superficie: #ffffff;
+  --cor-borda: #e2e6ef;
+  --cor-texto: #1f2a44;
+  --cor-texto-suave: #5b6478;
+  --cor-primaria: #2d4cc8;
+  --cor-primaria-escura: #203a9e;
+  --cor-sidebar: #16203a;
+  --cor-sidebar-texto: #c7d0e4;
+  --cor-sidebar-ativo: #2d4cc8;
+  --sombra: 0 1px 3px rgba(20, 32, 58, 0.12);
+  --raio: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--cor-primaria);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+  color: var(--cor-texto);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ===== Login ===== */
+.login-tela {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #16203a, #2d4cc8);
+}
+
+.login-cartao {
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-cartao h1 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.login-subtitulo {
+  color: var(--cor-texto-suave);
+  margin-top: 0;
+  font-size: 0.95rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.login-form input {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 0.65rem 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--cor-primaria);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.login-form button:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.login-erro {
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.login-nota {
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  background: #fff8e6;
+  border: 1px solid #f3e2a9;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: #7a5c00;
+}
+
+/* ===== Layout / Shell ===== */
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--cor-sidebar);
+  color: var(--cor-sidebar-texto);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0.75rem;
+}
+
+.sidebar-titulo {
+  color: #fff;
+  font-size: 1.05rem;
+  padding: 0 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-titulo small {
+  display: block;
+  font-weight: 400;
+  color: var(--cor-sidebar-texto);
+  font-size: 0.78rem;
+  margin-top: 0.15rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--cor-sidebar-texto);
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.sidebar-item.ativo {
+  background: var(--cor-sidebar-ativo);
+  color: #fff;
+  font-weight: 600;
+}
+
+.sidebar-item .emoji {
+  font-size: 1.1rem;
+}
+
+.sidebar-rodape {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.btn-sair {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.55rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.btn-sair:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topo {
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 1rem 1.5rem;
+}
+
+.topo h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.topo p {
+  margin: 0.15rem 0 0;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+.area-principal {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+/* ===== Cartoes e grades ===== */
+.cartao {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 1rem 1.25rem;
+}
+
+.grade {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.secao-titulo {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.secao-titulo:first-child {
+  margin-top: 0;
+}
+
+.vazio {
+  color: var(--cor-texto-suave);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* ===== Contadores (Visao Geral) ===== */
+.contadores {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  margin-bottom: 1.5rem;
+}
+
+.contador {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 1rem;
+  text-align: center;
+}
+
+.contador .numero {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+.contador .rotulo {
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+}
+
+/* ===== Avisos ===== */
+.aviso {
+  border-left: 4px solid var(--cor-primaria);
+}
+
+.aviso.info {
+  border-left-color: #2d4cc8;
+}
+
+.aviso.atencao {
+  border-left-color: #e0a500;
+}
+
+.aviso.critico {
+  border-left-color: #c0392b;
+}
+
+.aviso .aviso-meta {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+/* ===== Atalhos ===== */
+.atalho {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+.atalho .emoji {
+  font-size: 1.4rem;
+}
+
+/* ===== Tabelas ===== */
+.tabela-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cor-superficie);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.92rem;
+}
+
+th {
+  background: #eef1f8;
+  color: var(--cor-texto-suave);
+  font-weight: 600;
+}
+
+/* ===== Botao copiar ===== */
+.btn-copiar {
+  background: #eef1f8;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  color: var(--cor-primaria);
+}
+
+.btn-copiar:hover {
+  background: #e0e6f6;
+}
+
+.btn-copiar.copiado {
+  background: #e4f6e4;
+  color: #1e7a3c;
+  border-color: #bfe6bf;
+}
+
+/* ===== Campo com copia (credenciais) ===== */
+.campo-copia {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.campo-copia code {
+  background: #f4f6fb;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+}
+
+.btn-revelar {
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  padding: 0.1rem;
+}
+
+/* ===== Badges ===== */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-afazer {
+  background: #e7ebf5;
+  color: #3a4a7a;
+}
+
+.badge-andamento {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge-concluido {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-atrasado {
+  background: #fde2e2;
+  color: #b91c1c;
+}
+
+.badge-prioridade {
+  border: 1px solid transparent;
+}
+
+.prioridade-baixa {
+  background: #eef2f7;
+  color: #5b6478;
+}
+
+.prioridade-media {
+  background: #fff3d6;
+  color: #946200;
+}
+
+.prioridade-alta {
+  background: #fde2e2;
+  color: #b91c1c;
+}
+
+/* ===== Filtros ===== */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-end;
+}
+
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.filtro-campo select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: var(--cor-superficie);
+}
+
+/* ===== Banner modo exemplo ===== */
+.banner-exemplo {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fff8e6;
+  border: 1px solid #f3e2a9;
+  color: #7a5c00;
+  border-radius: var(--raio);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.banner-exemplo .banner-texto {
+  flex: 1;
+}
+
+.banner-exemplo button {
+  background: transparent;
+  border: none;
+  color: #7a5c00;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ===== Calendario ===== */
+.evento {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.evento-data {
+  flex-shrink: 0;
+  text-align: center;
+  background: #eef1f8;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  min-width: 70px;
+}
+
+.evento-data .dia {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  display: block;
+}
+
+.evento-data .mes {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+}
+
+.pilha {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 760px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-item {
+    width: auto;
+  }
+
+  .sidebar-rodape {
+    margin-top: 1rem;
+  }
+}
